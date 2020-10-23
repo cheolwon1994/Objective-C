@@ -18,6 +18,9 @@
 		F1F1D38C25410DCA0086462A /* MemoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F1D38B25410DCA0086462A /* MemoListTableViewController.m */; };
 		F1F1D39025414AAD0086462A /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F1D38F25414AAD0086462A /* ComposeViewController.m */; };
 		F1F1D394254276FA0086462A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F1D393254276FA0086462A /* DetailViewController.m */; };
+		F1F1D3982542B30E0086462A /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F1D3972542B30E0086462A /* DataManager.m */; };
+		F1F1D39E2542B9070086462A /* MemoData+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F1D39C2542B9070086462A /* MemoData+CoreDataClass.m */; };
+		F1F1D39F2542B9070086462A /* MemoData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F1D39D2542B9070086462A /* MemoData+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,12 @@
 		F1F1D38F25414AAD0086462A /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		F1F1D392254276FA0086462A /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F1F1D393254276FA0086462A /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F1F1D3962542B30E0086462A /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		F1F1D3972542B30E0086462A /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		F1F1D39A2542B9070086462A /* MemoData+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MemoData+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
+		F1F1D39B2542B9070086462A /* MemoData+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MemoData+CoreDataClass.h"; sourceTree = SOURCE_ROOT; };
+		F1F1D39C2542B9070086462A /* MemoData+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MemoData+CoreDataClass.m"; sourceTree = SOURCE_ROOT; };
+		F1F1D39D2542B9070086462A /* MemoData+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MemoData+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +81,10 @@
 		F1F1D363254103FD0086462A /* Memo */ = {
 			isa = PBXGroup;
 			children = (
+				F1F1D39A2542B9070086462A /* MemoData+CoreDataProperties.h */,
+				F1F1D39B2542B9070086462A /* MemoData+CoreDataClass.h */,
+				F1F1D39C2542B9070086462A /* MemoData+CoreDataClass.m */,
+				F1F1D39D2542B9070086462A /* MemoData+CoreDataProperties.m */,
 				F1F1D38425410AD40086462A /* Model */,
 				F1F1D364254103FD0086462A /* AppDelegate.h */,
 				F1F1D365254103FD0086462A /* AppDelegate.m */,
@@ -89,6 +102,8 @@
 				F1F1D38F25414AAD0086462A /* ComposeViewController.m */,
 				F1F1D392254276FA0086462A /* DetailViewController.h */,
 				F1F1D393254276FA0086462A /* DetailViewController.m */,
+				F1F1D3962542B30E0086462A /* DataManager.h */,
+				F1F1D3972542B30E0086462A /* DataManager.m */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
@@ -172,12 +187,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1F1D37A254103FD0086462A /* main.m in Sources */,
+				F1F1D39E2542B9070086462A /* MemoData+CoreDataClass.m in Sources */,
 				F1F1D38C25410DCA0086462A /* MemoListTableViewController.m in Sources */,
 				F1F1D366254103FD0086462A /* AppDelegate.m in Sources */,
 				F1F1D394254276FA0086462A /* DetailViewController.m in Sources */,
 				F1F1D369254103FD0086462A /* SceneDelegate.m in Sources */,
 				F1F1D39025414AAD0086462A /* ComposeViewController.m in Sources */,
+				F1F1D39F2542B9070086462A /* MemoData+CoreDataProperties.m in Sources */,
 				F1F1D372254103FD0086462A /* Memo.xcdatamodeld in Sources */,
+				F1F1D3982542B30E0086462A /* DataManager.m in Sources */,
 				F1F1D38725410B0C0086462A /* MemoData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

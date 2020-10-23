@@ -9,6 +9,7 @@
 #import "MemoData.h"
 #import "ComposeViewController.h"
 #import "DetailViewController.h"
+#import "DataManager.h"
 
 @interface MemoListTableViewController () 
 @property (strong,nonatomic) NSDateFormatter* formatter;
@@ -19,6 +20,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     NSLog(@"Appeared!!");
     [super viewWillAppear:animated];
+    [[DataManager sharedInstance] fetchMemo];       //DB에서 데이터 채워오기
     [self.tableView reloadData]; 
 }
 
@@ -37,7 +39,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSIndexPath* indexPath = [self.tableView indexPathForCell:(UITableViewCell*) sender];
     if(indexPath!=nil){
-        MemoData* target = [[MemoData dummyMemoList] objectAtIndex:indexPath.row];
+        MemoData* target = [[[DataManager sharedInstance] memoList] objectAtIndex:indexPath.row];
         DetailViewController* vc = (DetailViewController*)segue.destinationViewController;
         vc.memo = target;
 //        [vc setModalPresentationStyle: UIModalPresentationFullScreen];
@@ -51,14 +53,14 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[MemoData dummyMemoList] count];
+    return [[[DataManager sharedInstance] memoList] count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    MemoData* target = [[MemoData dummyMemoList] objectAtIndex:indexPath.row];
+    MemoData* target = [[[DataManager sharedInstance] memoList] objectAtIndex:indexPath.row];
     cell.textLabel.text = target.content;
 //    cell.detailTextLabel.text = target.insertDate.description;
     cell.detailTextLabel.text = [self.formatter stringFromDate:target.insertDate];

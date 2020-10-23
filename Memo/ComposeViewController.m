@@ -36,8 +36,8 @@
 - (IBAction)save:(id)sender {
     NSString* memo = self.memoTextView.text;
     
-    MemoData* newMemo = [[MemoData alloc] initWithContent:memo];
-    [[MemoData dummyMemoList] addObject:newMemo];
+    //DB에 저장
+    
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
