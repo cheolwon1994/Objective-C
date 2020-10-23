@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray* memoList;
 
 -(void)fetchMemo;       //DBd에서 정보를 읽어와서 memoList에 저장
-
+-(void)addNewMemo:(NSString*)memo;
 - (void)saveContext;
 
 +(instancetype)sharedInstance;
