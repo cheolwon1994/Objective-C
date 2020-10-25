@@ -38,7 +38,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     ComposeViewController* vc = [[segue.destinationViewController childViewControllers] objectAtIndex:0];
     vc.editTarget = self.memo;
-    [vc setModalPresentationStyle: UIModalPresentationFullScreen];
+    //전체화면 설정을 위해 사용
+    ComposeViewController* obj = [segue destinationViewController];
+    [obj setModalPresentationStyle: UIModalPresentationFullScreen];
 }
 
 - (void)viewDidLoad {
