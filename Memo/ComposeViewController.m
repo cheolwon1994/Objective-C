@@ -47,8 +47,12 @@
     NSString* memo = self.memoTextView.text;
     
     //DB에 저장
-    [[DataManager sharedInstance] addNewMemo:memo];
-    
+    if(self.editTarget !=nil){
+        self.editTarget.content = memo;
+        [[DataManager sharedInstance] saveContext];
+    }else{
+        [[DataManager sharedInstance] addNewMemo:memo];
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

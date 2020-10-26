@@ -19,6 +19,13 @@
     return sharedInstance;
 }
 
+- (void)deleteMemo:(id)memo{
+    if(memo!=nil){
+        [self.mainContext deleteObject:memo];
+        [self saveContext];
+    }
+}
+
 -(void)addNewMemo:(NSString *)memo{
     //기본 형태 객체생성
     MemoData* newMemo = [[MemoData alloc] initWithContext:self.mainContext];

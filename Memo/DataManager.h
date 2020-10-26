@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "MemoData+CoreDataProperties.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DataManager : NSObject
@@ -16,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)fetchMemo;       //DBd에서 정보를 읽어와서 memoList에 저장
 -(void)addNewMemo:(NSString*)memo;
-- (void)saveContext;
+-(void)saveContext;
+-(void)deleteMemo:(MemoData*)memo;
 
 +(instancetype)sharedInstance;
 
