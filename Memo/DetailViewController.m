@@ -40,17 +40,19 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    ComposeViewController* vc = [[segue.destinationViewController childViewControllers] objectAtIndex:0];
-    vc.editTarget = self.memo;
-    //전체화면 설정을 위해 사용
+//    ComposeViewController* vc = [[segue.destinationViewController childViewControllers] objectAtIndex:0];
+//    vc.editTarget = self.memo;
+    
+    //전체화면 설정을 위해 위의 코드에서 변경
     ComposeViewController* obj = [segue destinationViewController];
-    [obj setModalPresentationStyle: UIModalPresentationFullScreen];
+    [obj setModalPresentationStyle: UIModalPresentationFullScreen];         //전체화면으로 설정
+    obj = [[obj childViewControllers] objectAtIndex:0];
+    obj.editTarget = self.memo;
 }
 
-
+//메모 수정 후, 화면에 반영되기 위해 사용
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
     [self.memoTableView reloadData];
 }
 
